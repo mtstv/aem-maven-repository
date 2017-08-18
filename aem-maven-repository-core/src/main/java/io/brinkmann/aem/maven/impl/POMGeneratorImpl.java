@@ -100,10 +100,10 @@ public class POMGeneratorImpl implements POMGenerator {
         groupId = StringUtils.isNotEmpty(groupId) ? groupId : defaultGroupId;
         messageFormatValues.add(groupId);
 
-        artifactId = StringUtils.isNoneEmpty(artifactId) ? artifactId : defaultArtifactId;
+        artifactId = StringUtils.isNotBlank(artifactId) ? artifactId : defaultArtifactId;
         messageFormatValues.add(artifactId);
 
-        version = StringUtils.isNoneEmpty(version) ? version : defaultVersion;
+        version = StringUtils.isNotBlank(version) ? version : defaultVersion;
         messageFormatValues.add(version);
 
         messageFormatValues.add(generateDependenciesPomFragment(bundleContext, null));
